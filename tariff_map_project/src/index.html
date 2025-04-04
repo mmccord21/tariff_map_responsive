@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Tariffs by Country</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include D3.js for data visualization -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Include TopoJSON for map data -->
+    <script src="https://unpkg.com/topojson@3"></script>
+    <!-- Include D3-geo-projection for map projections -->
+    <script src="https://unpkg.com/d3-geo-projection@4"></script>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>USA Tariffs by Country</h1>
+            <p>Interactive visualization of tariff rates imposed by the United States</p>
+        </header>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="map-view">Map View</div>
+            <div class="tab" data-tab="table-view">Table View</div>
+        </div>
+        
+        <div id="map-view" class="tab-content active">
+            <div id="map-container">
+                <div id="map"></div>
+                <div id="tooltip" class="hidden">
+                    <h3 id="country"></h3>
+                    <div id="tariff-info"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="table-view" class="tab-content">
+            <div class="table-controls">
+                <input type="text" class="search-box" id="search-input" placeholder="Search countries...">
+                <select class="sort-select" id="sort-select">
+                    <option value="country-asc">Country (A-Z)</option>
+                    <option value="country-desc">Country (Z-A)</option>
+                    <option value="rate-asc">Tariff Rate (Low to High)</option>
+                    <option value="rate-desc">Tariff Rate (High to Low)</option>
+                </select>
+            </div>
+            <div id="table-container">
+                <table class="data-table" id="tariff-table">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Target</th>
+                            <th>Tariff Rate</th>
+                            <th>Date Announced</th>
+                            <th>Date in Effect</th>
+                            <th>Legal Authority</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tariff-table-body">
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Data source: Trump tariff tracker | Last updated: April 2025</p>
+        </footer>
+    </div>
+
+    <script src="js/map.js"></script>
+</body>
+</html>

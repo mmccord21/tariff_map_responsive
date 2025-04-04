@@ -1,0 +1,883 @@
+{
+  "Algeria": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.3,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Angola": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.32,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Argentina": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Australia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": "TBD",
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Bangladesh": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.37,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Bosnia and Herzegovina": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.36,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Botswana": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.38,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Brazil": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": "TBD",
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Brunei": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.24,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Cambodia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.49,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Cameroon": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.12,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Canada": [
+    {
+      "target_type": "Economy",
+      "target": "USMCA noncompliant goods",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.25,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "USMCA noncompliant energy products",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.1,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "USMCA noncompliant potash",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.1,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "Exempt",
+      "legal_authority": "IEEPA",
+      "rate": 0,
+      "sources": "USTR Press Release"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Digital service taxes",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
+      "rate": "TBD",
+      "sources": "White House Fact Sheet"
+    }
+  ],
+  "Chad": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.13,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "China": [
+    {
+      "target_type": "Economy",
+      "target": "All imports",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-03",
+      "legal_authority": "IEEPA",
+      "rate": 0.2,
+      "sources": "Presidential Action "
+    },
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.34,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "C\u00f4te d`Ivoire": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.21,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Democratic Republic of the Congo": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.11,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Equatorial Guinea": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.13,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "European Union": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.2,
+      "sources": "USTR Press Release"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Digital services taxes",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
+      "rate": "TBD",
+      "sources": "Presidential Action "
+    }
+  ],
+  "Falkland Islands": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.42,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Fiji": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.32,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Global": [
+    {
+      "target_type": "Other",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-04-02",
+      "date_in_effect": "2025-04-05",
+      "legal_authority": "IEEPA",
+      "rate": 0.1,
+      "sources": "USTR Press Release"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Steel and aluminum",
+      "date_announced": "2025-02-10",
+      "date_in_effect": "2025-03-12",
+      "legal_authority": "Section 232",
+      "rate": 0.25,
+      "sources": "Federal Register"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Copper",
+      "date_announced": "2025-02-25",
+      "date_in_effect": "Under investigation",
+      "legal_authority": "Section 232",
+      "rate": "TBD",
+      "sources": "Presidential Action"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Timber and lumber",
+      "date_announced": "2025-03-01",
+      "date_in_effect": "Under investigation",
+      "legal_authority": "Section 232",
+      "rate": "TBD",
+      "sources": "Presidential Action"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Automobiles",
+      "date_announced": "2025-03-26",
+      "date_in_effect": "2025-04-03",
+      "legal_authority": "Section 232, 301, 604",
+      "rate": 0.25,
+      "sources": "Presidential Action"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Automobile parts",
+      "date_announced": "2025-03-26",
+      "date_in_effect": "TBD,  No later than 5/3/2025",
+      "legal_authority": "Section 232, 301, 604",
+      "rate": 0.25,
+      "sources": "Presidential Action"
+    }
+  ],
+  "Guyana": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.38,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "India": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.27,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Indonesia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.32,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Iraq": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.39,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Israel": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.17,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Japan": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.24,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Jordan": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.2,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Kazakhstan": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.27,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Laos": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.48,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Lesotho": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.5,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Libya": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.31,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Liechtenstein": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.37,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Madagascar": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.47,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Malawi": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.18,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Malaysia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.24,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Mauritius": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.4,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Mexico": [
+    {
+      "target_type": "Economy",
+      "target": "Non-USMCA commodities",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.25,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Non-USMCA energy products",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.1,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Non-USMCA potash",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "IEEPA",
+      "rate": 0.1,
+      "sources": "White House Fact Sheet"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "Exempt",
+      "legal_authority": "IEEPA",
+      "rate": 0,
+      "sources": "USTR Press Release"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Digital service taxes",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
+      "rate": "TBD",
+      "sources": "White House Fact Sheet"
+    }
+  ],
+  "Moldova": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.31,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Mozambique": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.16,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Myanmar (Burma)": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.45,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Namibia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.21,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Nauru": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.3,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Nicaragua": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.19,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Nigeria": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.14,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "North Macedonia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.33,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Norway": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.16,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Pakistan": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.3,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Philippines": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.18,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Russia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Saudi Arabia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Serbia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.38,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "South Africa": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.31,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "South Korea": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.26,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Sri Lanka": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.44,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Switzerland": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.32,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Syria": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.41,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Taiwan": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.32,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Thailand": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.37,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Tunisia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.28,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Turkey": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": "TBD",
+      "sources": "USTR Press Release"
+    }
+  ],
+  "United Kingdom": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": "TBD",
+      "sources": "USTR Press Release"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Digital services taxes",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
+      "rate": "TBD",
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Vanuatu": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.23,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Venezuela": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.15,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Vietnam": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.46,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Zambia": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.17,
+      "sources": "USTR Press Release"
+    }
+  ],
+  "Zimbabwe": [
+    {
+      "target_type": "Economy",
+      "target": "Non-reciprocal trade",
+      "date_announced": "2025-02-13",
+      "date_in_effect": "2025-04-09",
+      "legal_authority": "IEEPA",
+      "rate": 0.18,
+      "sources": "USTR Press Release"
+    }
+  ]
+}
