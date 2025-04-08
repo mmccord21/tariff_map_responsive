@@ -11,6 +11,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function setupChartsTab() {
+    // Add chart tab to navigation
+    const tabsContainer = document.querySelector('.tabs');
+    const chartTab = document.createElement('div');
+    chartTab.className = 'tab';
+    chartTab.setAttribute('data-tab', 'charts-view');
+    chartTab.textContent = 'Analytics';
+    tabsContainer.appendChild(chartTab);
+    
+    // Create charts view container
+    const container = document.querySelector('.container');
+    const chartsView = document.createElement('div');
+    chartsView.id = 'charts-view';
+    chartsView.className = 'tab-content';
+    
+    chartsView.innerHTML = `
+        <div class="filters-row">
+            <select id="chart-type">
+                <option value="top10">Top 10 Highest Tariff Countries</option>
+                <option value="regional">Regional Tariff Analysis</option>
+                <option value="sector">Tariffs by Sector</option>
+            </select>
+            <button id="download-chart" class="action-button">
+                <i class="fas fa-download"></i> Export Chart
+            </button>
+        </div>
+        <div id="chart-container"></div>
+        <div id="chart-insights" class="insights-panel">
+            <h3>Key Insights</h3>
+            <p>Select a chart type above to see analysis.</p>
+        </div>
+    `;
+    
+    // Insert charts view before the footer
+    const footer = document.querySelector('footer');
+    container.insertBefore(chartsView, footer);
+}
+
 function initializeCharts() {
     // Load Chart.js library dynamically
     const script = document.createElement('script');
