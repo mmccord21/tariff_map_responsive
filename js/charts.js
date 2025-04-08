@@ -162,6 +162,107 @@ function setupFilters() {
     });
 }
 
+// Set up chart download functionality
+document.getElementById('download-chart').addEventListener('click', function() {
+    const canvas = document.getElementById('tariff-chart');
+    if (!canvas) return;
+    
+    // Get current chart type for filename
+    const chartType = document.getElementById('chart-type').value;
+    const chartTypes = {
+        'top10': 'Top_Countries',
+        'regional': 'Regional_Analysis',
+        'sector': 'Sector_Analysis',
+        'timeline': 'Tariff_Timeline',
+        'authority': 'Legal_Authority',
+        'comparison': 'Country_Comparison'
+    };
+    
+    const filename = `USA_Tariff_${chartTypes[chartType] || 'Chart'}_${new Date().toISOString().split('T')[0]}.png`;
+    
+    // Convert canvas to downloadable image
+    try {
+        // For most browsers
+        const link = document.createElement('a');
+        link.download = filename;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    } catch (e) {
+        console.error('Error exporting chart:', e);
+        alert('Unable to download chart. Your browser may not support this feature.');
+    }
+});
+// Helper function to get appropriate chart configuration based on device
+function getChartResponsiveOptions(isMobile) {
+    return {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+            padding: {
+                top: isMobile ? 5 : 10,
+                right: isMobile ? 10 : 20,
+                bottom: isMobile ? 5 : 10,
+                left: isMobile ? 10 : 20
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                font: { 
+                    size: isMobile ? 14 : 16, 
+                    weight: 'bold',
+                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                },
+                padding: {
+                    top: isMobile ? 5 : 10,
+                    bottom: isMobile ? 10 : 20
+                }
+            },
+            legend: {
+                labels: {
+                    boxWidth: isMobile ? 12 : 20,
+                    font: {
+                        size: isMobile ? 10 : 12
+                    }
+                }
+            },
+            tooltip: {
+                titleFont: {
+                    size: isMobile ? 12 : 14
+                },
+                bodyFont: {
+                    size: isMobile ? 11 : 12
+                },
+                boxPadding: isMobile ? 4 : 6
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    maxRotation: isMobile ? 45 : 0,
+                    font: {
+                        size: isMobile ? 10 : 12
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: isMobile ? 10 : 12
+                    }
+                }
+            }
+        },
+        elements: {
+            point: {
+                radius: isMobile ? 2 : 3
+            },
+            line: {
+                borderWidth: isMobile ? 1.5 : 2
+            }
+        }
+    };
+}
 function createFilteredChart(chartType) {
     // Apply filters to data
     const filteredData = applyFilters(window.fullTariffData);
@@ -421,7 +522,497 @@ function updateInsightsPanel(data) {
     `;
 }
 
-// Add this new function to create a timeline chart
+function createRegionalChart(data) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const ctx = getChartContext();
+    
+    // Define regions and their member countries
+    const regionMap = {
+        'Asia': ['China', 'Japan', 'South Korea', 'India', 'Vietnam', 'Thailand', 'Taiwan', 
+                'Malaysia', 'Indonesia', 'Philippines', 'Laos', 'Cambodia', 'Myanmar (Burma)', 
+                'Brunei', 'Bangladesh', 'Pakistan', 'Sri Lanka'],
+        'Europe': ['European Union', 'United Kingdom', 'Switzerland', 'Norway', 'Serbia', 
+                  'Bosnia and Herzegovina', 'North Macedonia', 'Moldova', 'Liechtenstein'],
+        'Africa': ['Algeria', 'Angola', 'Botswana', 'Cameroon', 'Chad', 'Democratic Republic of the Congo', 
+                  'Côte d`Ivoire', 'Equatorial Guinea', 'Lesotho', 'Libya', 'Madagascar', 'Malawi', 
+                  'Mauritius', 'Mozambique', 'Namibia', 'Nigeria', 'South Africa', 'Tunisia', 
+                  'Zambia', 'Zimbabwe'],
+        'North America': ['Canada', 'Mexico', 'Nicaragua'],
+        'South America': ['Argentina', 'Brazil', 'Guyana', 'Venezuela'],
+        'Oceania': ['Australia', 'Fiji', 'Nauru', 'Vanuatu'],
+        'Middle East': ['Iraq', 'Israel', 'Jordan', 'Saudi Arabia', 'Syria']
+    };
+    
+    // Calculate regional statistics
+    const regionStats = {};
+    const allCountryCounts = {}; // For tracking total countries per region
+    
+    // Initialize region statistics
+    Object.keys(regionMap).forEach(region => {
+        regionStats[region] = {
+            totalRate: 0,
+            countryCount: 0,
+            tariffCount: 0,
+            countries: [],
+            highestRate: 0,
+            highestCountry: '',
+            lowestRate: Infinity,
+            lowestCountry: ''
+        };
+        allCountryCounts[region] = regionMap[region].length;
+    });
+    
+    // Process each country's tariffs
+    Object.entries(data).forEach(([country, tariffs]) => {
+        // Find which region this country belongs to
+        let countryRegion = 'Other';
+        for (const [region, countries] of Object.entries(regionMap)) {
+            if (countries.includes(country)) {
+                countryRegion = region;
+                break;
+            }
+        }
+        
+        // Initialize region if not already done
+        if (!regionStats[countryRegion]) {
+            regionStats[countryRegion] = {
+                totalRate: 0,
+                countryCount: 0,
+                tariffCount: 0,
+                countries: [],
+                highestRate: 0,
+                highestCountry: '',
+                lowestRate: Infinity,
+                lowestCountry: ''
+            };
+            allCountryCounts[countryRegion] = 0;
+        }
+        
+        // Calculate country's average tariff
+        const rates = tariffs.map(t => typeof t.rate === 'number' ? t.rate : 0)
+                             .filter(rate => rate > 0);
+        if (rates.length > 0) {
+            const countryAvg = rates.reduce((sum, rate) => sum + rate, 0) / rates.length;
+            const countryAvgPercent = countryAvg * 100;
+            
+            // Update region statistics
+            regionStats[countryRegion].totalRate += countryAvgPercent;
+            regionStats[countryRegion].countryCount++;
+            regionStats[countryRegion].tariffCount += rates.length;
+            regionStats[countryRegion].countries.push(country);
+            
+            // Track highest and lowest country rates
+            if (countryAvgPercent > regionStats[countryRegion].highestRate) {
+                regionStats[countryRegion].highestRate = countryAvgPercent;
+                regionStats[countryRegion].highestCountry = country;
+            }
+            if (countryAvgPercent < regionStats[countryRegion].lowestRate) {
+                regionStats[countryRegion].lowestRate = countryAvgPercent;
+                regionStats[countryRegion].lowestCountry = country;
+            }
+        }
+    });
+    
+    // Calculate averages and prepare chart data
+    const regionData = [];
+    
+    Object.entries(regionStats).forEach(([region, stats]) => {
+        if (stats.countryCount > 0) {
+            const avgRate = stats.totalRate / stats.countryCount;
+            const coverage = (stats.countryCount / (allCountryCounts[region] || 1)) * 100;
+            
+            regionData.push({
+                region: region,
+                avgRate: avgRate,
+                tariffCount: stats.tariffCount,
+                countryCount: stats.countryCount,
+                totalCountries: allCountryCounts[region] || stats.countryCount,
+                coverage: coverage,
+                highestRate: stats.highestRate,
+                highestCountry: stats.highestCountry,
+                lowestRate: stats.lowestRate !== Infinity ? stats.lowestRate : 0,
+                lowestCountry: stats.lowestCountry || 'N/A'
+            });
+        }
+    });
+    
+    // Sort by average tariff rate
+    regionData.sort((a, b) => b.avgRate - a.avgRate);
+    
+    // Choose appropriate chart type based on device
+    const chartType = isMobile ? 'bar' : 'bar';
+    const chartColors = generateGradientColors(regionData.length);
+    
+    // Create chart configuration
+    const chartConfig = {
+        type: chartType,
+        data: {
+            labels: regionData.map(item => item.region),
+            datasets: [{
+                label: 'Average Tariff Rate (%)',
+                data: regionData.map(item => item.avgRate),
+                backgroundColor: chartColors,
+                borderColor: 'rgba(0, 0, 0, 0.1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: isMobile ? 'y' : 'x', // Horizontal bars on mobile
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Tariff Rates by Region',
+                    font: { 
+                        size: isMobile ? 14 : 16, 
+                        weight: 'bold',
+                        family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                    },
+                    color: '#2c5282'
+                },
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    titleColor: '#2c5282',
+                    bodyColor: '#4a5568',
+                    borderColor: '#e2e8f0',
+                    borderWidth: 1,
+                    padding: isMobile ? 10 : 12,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
+                        },
+                        label: function(context) {
+                            const item = regionData[context.dataIndex];
+                            return [
+                                `Average Tariff: ${item.avgRate.toFixed(2)}%`,
+                                `Countries: ${item.countryCount} of ${item.totalCountries} (${item.coverage.toFixed(0)}%)`,
+                                `Total Tariffs: ${item.tariffCount}`
+                            ];
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e2e8f0'
+                    },
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            size: isMobile ? 10 : 12,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    },
+                    title: {
+                        display: !isMobile,
+                        text: isMobile ? '' : 'Region',
+                        color: '#2c5282',
+                        font: {
+                            weight: 'normal',
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                            size: 12
+                        }
+                    }
+                },
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        display: !isMobile
+                    },
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            size: isMobile ? 10 : 12,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Average Tariff Rate (%)',
+                        color: '#2c5282',
+                        font: {
+                            weight: 'normal',
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                            size: isMobile ? 10 : 12
+                        }
+                    }
+                }
+            }
+        }
+    };
+    
+    // Create the chart
+    new Chart(ctx, chartConfig);
+    
+    // Generate insights panel
+    updateRegionalInsightsPanel(regionData);
+}
+
+function updateRegionalInsightsPanel(regionData) {
+    const insightsPanel = document.getElementById('chart-insights');
+    
+    // Find highest and lowest regions
+    const highestRegion = regionData[0];
+    const lowestRegion = regionData[regionData.length - 1];
+    
+    // Calculate global average across regions
+    const globalAvg = regionData.reduce((sum, region) => sum + region.avgRate, 0) / regionData.length;
+    
+    // Calculate total countries and tariffs
+    const totalCountries = regionData.reduce((sum, region) => sum + region.countryCount, 0);
+    const totalTariffs = regionData.reduce((sum, region) => sum + region.tariffCount, 0);
+    
+    // Find region with most/least country coverage
+    const bestCoverage = regionData.reduce((prev, current) => 
+        (prev.coverage > current.coverage) ? prev : current);
+    const worstCoverage = regionData.reduce((prev, current) => 
+        (prev.coverage < current.coverage) ? prev : current);
+    
+    insightsPanel.innerHTML = `
+        <h3>Regional Analysis Insights</h3>
+        <ul>
+            <li><strong>${highestRegion.region}</strong> has the highest average tariff rate at <strong>${highestRegion.avgRate.toFixed(2)}%</strong></li>
+            <li><strong>${lowestRegion.region}</strong> has the lowest average tariff rate at <strong>${lowestRegion.avgRate.toFixed(2)}%</strong></li>
+            <li>The highest individual country rate is <strong>${highestRegion.highestCountry}</strong> at <strong>${highestRegion.highestRate.toFixed(2)}%</strong></li>
+            <li>The average tariff across all regions is <strong>${globalAvg.toFixed(2)}%</strong></li>
+            <li>Data covers <strong>${totalCountries}</strong> countries with <strong>${totalTariffs}</strong> total tariff measures</li>
+        </ul>
+        <p class="insight-note">Note: Regional averages are based on available country data, which may not include all countries in each region.</p>
+    `;
+}
+
+function createSectorChart(data) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const ctx = getChartContext();
+    
+    // Extract and categorize tariffs into sectors
+    const sectors = {};
+    
+    Object.entries(data).forEach(([country, tariffs]) => {
+        tariffs.forEach(tariff => {
+            if (!tariff.target) return;
+            
+            // Categorize tariffs into sectors based on keywords
+            let sector = 'General';
+            const target = tariff.target.toLowerCase();
+            
+            if (/auto|car|vehicle/i.test(target)) {
+                sector = "Automotive";
+            } else if (/steel|aluminum|metal|iron/i.test(target)) {
+                sector = "Metals & Mining";
+            } else if (/electronic|tech|computer|semiconductor|chip/i.test(target)) {
+                sector = "Electronics & Technology";
+            } else if (/food|agriculture|crop|grain|fruit|vegetable|meat/i.test(target)) {
+                sector = "Agricultural Products";
+            } else if (/textile|clothing|apparel|garment|fabric/i.test(target)) {
+                sector = "Textiles & Apparel";
+            } else if (/energy|oil|gas|petroleum|coal/i.test(target)) {
+                sector = "Energy";
+            } else if (/chemical|pharmaceutical|drug|medicine/i.test(target)) {
+                sector = "Chemicals & Pharmaceuticals";
+            } else if (/non.*reciprocal|trade/i.test(target)) {
+                sector = "General Trade";
+            } else if (/digital|service|tax/i.test(target)) {
+                sector = "Digital Services";
+            } else if (/lumber|timber|wood/i.test(target)) {
+                sector = "Forestry & Wood Products";
+            } else if (/copper|mineral/i.test(target)) {
+                sector = "Minerals & Resources";
+            }
+            
+            // Initialize sector data structure if needed
+            if (!sectors[sector]) {
+                sectors[sector] = {
+                    rates: [],
+                    count: 0,
+                    countries: new Set(),
+                    targets: new Set()
+                };
+            }
+            
+            // Add tariff data to appropriate sector
+            if (typeof tariff.rate === 'number') {
+                sectors[sector].rates.push(tariff.rate * 100);
+            }
+            sectors[sector].count++;
+            sectors[sector].countries.add(country);
+            sectors[sector].targets.add(tariff.target);
+        });
+    });
+    
+    // Process sector data for chart
+    let sectorData = Object.entries(sectors).map(([name, data]) => {
+        const avgRate = data.rates.length > 0 
+            ? data.rates.reduce((sum, rate) => sum + rate, 0) / data.rates.length
+            : 0;
+        
+        return {
+            sector: name,
+            avgTariff: avgRate,
+            count: data.count,
+            countriesCount: data.countries.size,
+            countries: Array.from(data.countries).sort(),
+            targetsCount: data.targets.size,
+            targets: Array.from(data.targets).slice(0, 5) // Limit to top 5 targets for display
+        };
+    }).filter(item => item.count >= 1); // Only include sectors with at least one tariff
+    
+    // Sort by average tariff rate
+    sectorData.sort((a, b) => b.avgTariff - a.avgTariff);
+    
+    // For mobile, limit to most important sectors
+    if (isMobile && sectorData.length > 6) {
+        sectorData = sectorData.slice(0, 6);
+    }
+    
+    // Create color palette with muted, professional colors
+    const chartColors = [
+        'rgba(74, 109, 167, 0.8)',
+        'rgba(85, 130, 169, 0.8)',
+        'rgba(95, 145, 161, 0.8)',
+        'rgba(106, 159, 152, 0.8)',
+        'rgba(119, 170, 142, 0.8)',
+        'rgba(134, 180, 131, 0.8)',
+        'rgba(148, 186, 127, 0.8)',
+        'rgba(130, 172, 143, 0.8)',
+        'rgba(115, 157, 156, 0.8)',
+        'rgba(100, 142, 166, 0.8)'
+    ];
+    
+    // Create horizontal bar chart
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sectorData.map(item => item.sector),
+            datasets: [{
+                label: 'Average Tariff Rate (%)',
+                data: sectorData.map(item => item.avgTariff),
+                backgroundColor: sectorData.map((_, i) => chartColors[i % chartColors.length]),
+                borderColor: '#e2e8f0',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y', // Horizontal bars
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: isMobile ? 'Tariffs by Industry' : 'Average Tariff Rates by Industry Sector',
+                    font: { 
+                        size: isMobile ? 14 : 16, 
+                        weight: 'bold',
+                        family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" 
+                    },
+                    color: '#2c5282'
+                },
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    titleColor: '#2c5282',
+                    bodyColor: '#4a5568',
+                    borderColor: '#e2e8f0',
+                    borderWidth: 1,
+                    padding: isMobile ? 8 : 12,
+                    callbacks: {
+                        label: function(context) {
+                            const item = sectorData[context.dataIndex];
+                            return [
+                                `Average Tariff: ${item.avgTariff.toFixed(2)}%`,
+                                `Number of Tariffs: ${item.count}`,
+                                `Affects ${item.countriesCount} countries`,
+                                item.targetsCount > 1 ? 
+                                    `${item.targetsCount} different product categories` : 
+                                    `Product: ${item.targets[0]}`
+                            ];
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Average Tariff Rate (%)',
+                        color: '#2c5282',
+                        font: {
+                            weight: 'normal', 
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                            size: isMobile ? 10 : 12
+                        }
+                    },
+                    grid: {
+                        color: '#e2e8f0'
+                    },
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            size: isMobile ? 10 : 12,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        },
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            size: isMobile ? 10 : 12,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    // Update insights for sector view with more professional analysis
+    updateSectorInsights(sectorData);
+}
+
+function updateSectorInsights(sectorData) {
+    const insightsPanel = document.getElementById('chart-insights');
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    
+    // Find key insights
+    const highestSector = sectorData[0];
+    const lowestSector = sectorData[sectorData.length - 1];
+    const averageTariff = sectorData.reduce((sum, item) => sum + item.avgTariff, 0) / sectorData.length;
+    
+    // Find most widely affected sector (by country count)
+    const mostCountries = sectorData.reduce((prev, current) => 
+        (prev.countriesCount > current.countriesCount) ? prev : current);
+    
+    // Find sector with most different product targets
+    const mostProducts = sectorData.reduce((prev, current) => 
+        (prev.targetsCount > current.targetsCount) ? prev : current);
+    
+    // Generate insights
+    insightsPanel.innerHTML = `
+        <h3>Sector Analysis</h3>
+        <ul>
+            <li><strong>Highest tariff sector:</strong> ${highestSector.sector} (${highestSector.avgTariff.toFixed(2)}%)</li>
+            <li><strong>Lowest tariff sector:</strong> ${lowestSector.sector} (${lowestSector.avgTariff.toFixed(2)}%)</li>
+            <li><strong>Average across sectors:</strong> ${averageTariff.toFixed(2)}%</li>
+            <li><strong>Most widespread:</strong> ${mostCountries.sector} affects ${mostCountries.countriesCount} countries</li>
+            <li><strong>Most diverse:</strong> ${mostProducts.sector} covers ${mostProducts.targetsCount} product categories</li>
+        </ul>
+        <p class="insight-note">Note: Sectors are determined by analyzing product descriptions in the tariff data. ${isMobile ? '' : 'Tariffs are categorized based on keywords in target fields.'}</p>
+    `;
+}
+
 function createTimelineChart(data) {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const ctx = getChartContext();
