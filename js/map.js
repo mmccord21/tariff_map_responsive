@@ -13,6 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }).catch(error => {
         console.error('Error loading data:', error);
     });
+
+    // Initialize share button
+    const shareButton = document.getElementById('share-button');
+    if (shareButton) {
+        shareButton.addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'USA Tariff Map',
+                    text: 'Check out this interactive tariff map',
+                    url: window.location.href
+                }).catch(err => {
+                    console.error('Share failed:', err);
+                    alert('The current URL has been copied to your clipboard');
+                    navigator.clipboard.writeText(window.location.href);
+                });
+            } else {
+                // Fallback
+                alert('The current URL has been copied to your clipboard');
+                navigator.clipboard.writeText(window.location.href);
+            }
+        });
+    }
 });
 
 // Tab navigation functionality
@@ -747,28 +769,8 @@ function createMap(tariffData, worldData, isMobile) {
     }
 }
 
-// Load additional scripts
-function loadScript(src) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-    });
-}
-
-// Load all additional components
+// Initialize global search
 document.addEventListener('DOMContentLoaded', function() {
-    Promise.all([
-        loadScript('js/charts.js'),
-        loadScript('js/timeline.js'),
-        loadScript('js/theme.js')
-    ]).catch(error => {
-        console.error('Error loading additional components:', error);
-    });
-    
-    // Initialize global search
     setupGlobalSearch();
 });
 
@@ -776,6 +778,11 @@ function setupGlobalSearch() {
     const searchInput = document.getElementById('global-search');
     const searchButton = document.getElementById('search-button');
     const resultsDropdown = document.getElementById('search-results');
+    
+    if (!searchInput || !searchButton || !resultsDropdown) {
+        console.error("Search elements not found in the DOM");
+        return;
+    }
     
     // Show search results as user types
     searchInput.addEventListener('input', debounce(function() {
@@ -786,11 +793,22 @@ function setupGlobalSearch() {
             return;
         }
         
+        // Use the already loaded tariffData instead of fetching again
         fetch('data/tariff_data.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 const results = searchTariffData(data, query);
                 displaySearchResults(results);
+            })
+            .catch(error => {
+                console.error('Error fetching search data:', error);
+                resultsDropdown.innerHTML = '<div class="search-error">Error loading search results</div>';
+                resultsDropdown.classList.remove('hidden');
             });
     }, 300));
     
@@ -799,10 +817,18 @@ function setupGlobalSearch() {
         const query = searchInput.value.trim().toLowerCase();
         if (query.length >= 2) {
             fetch('data/tariff_data.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     const results = searchTariffData(data, query);
                     displaySearchResults(results);
+                })
+                .catch(error => {
+                    console.error('Error fetching search data:', error);
                 });
         }
     });

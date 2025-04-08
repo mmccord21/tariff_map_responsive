@@ -116,11 +116,37 @@ header p {
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     z-index: 1000;
-    display: none;
+    padding: 10px;
 }
 
 .search-dropdown.visible {
     display: block;
+}
+
+.search-dropdown.hidden {
+    display: none;
+}
+
+.search-result-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-no-results {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+}
+
+.search-error {
+    padding: 15px;
+    text-align: center;
+    color: #e74c3c;
 }
 
 /* Map container styles */
@@ -300,10 +326,12 @@ header p {
 
 .tab-content {
     display: none;
+    padding: 15px 0;
+    min-height: 200px;
 }
 
 .tab-content.active {
-    display: block;
+    display: block !important;
 }
 
 /* Timeline View Styles */
