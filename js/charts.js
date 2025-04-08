@@ -115,13 +115,24 @@ function createTop10Chart(countryData) {
                 title: {
                     display: true,
                     text: 'Top 10 Countries by Average Tariff Rate',
-                    font: { size: 16 }
+                    font: { size: 16, weight: 'bold', family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" },
+                    color: '#2c5282' // Match your primary color
                 },
                 legend: {
                     display: false
                 },
                 tooltip: {
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    titleColor: '#2c5282',
+                    bodyColor: '#4a5568',
+                    borderColor: '#e2e8f0',
+                    borderWidth: 1,
+                    padding: 12,
+                    boxShadow: '0px 2px 4px rgba(0,0,0,0.1)',
                     callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
+                        },
                         label: function(context) {
                             return `Tariff Rate: ${context.raw.toFixed(2)}%`;
                         }
@@ -131,9 +142,34 @@ function createTop10Chart(countryData) {
             scales: {
                 y: {
                     beginAtZero: true,
+                    grid: {
+                        color: '#e2e8f0' // Lighter grid lines
+                    },
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    },
                     title: {
                         display: true,
-                        text: 'Average Tariff Rate (%)'
+                        text: 'Average Tariff Rate (%)',
+                        color: '#2c5282',
+                        font: {
+                            weight: 'normal',
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false // Remove vertical grid lines
+                    },
+                    ticks: {
+                        color: '#4a5568',
+                        font: {
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
                     }
                 }
             }
@@ -152,9 +188,33 @@ function getChartContext() {
 }
 
 function generateGradientColors(count) {
-    return Array(count).fill().map((_, i) => 
-        `hsl(${220 + (i * 120 / count)}, 70%, 60%)`
-    );
+    // Professional, muted color palette
+    const baseColors = [
+        '#4a6da7', // Muted blue
+        '#6e8bc4', // Light blue
+        '#8da7d6', // Softer blue
+        '#a3bae6', // Very soft blue
+        '#5f7a99', // Steel blue
+        '#7494b9', // Sky blue
+        '#94adc5', // Baby blue
+        '#839fb3', // Pewter blue
+        '#6d8a98', // Slate blue
+        '#94a9b8'  // Calm gray-blue
+    ];
+    
+    // For small counts, use the most distinct colors
+    if (count <= baseColors.length) {
+        return baseColors.slice(0, count);
+    }
+    
+    // For larger counts, interpolate between colors
+    const result = [];
+    for (let i = 0; i < count; i++) {
+        const index = (i * baseColors.length / count) | 0;
+        result.push(baseColors[index]);
+    }
+    
+    return result;
 }
 
 function updateInsightsPanel(data) {

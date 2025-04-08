@@ -148,6 +148,24 @@
                 </div>
             </div>
         </div>
+
+        <div id="charts-view" class="tab-content">
+            <div class="filters-row">
+                <select id="chart-type">
+                    <option value="top10">Top 10 Highest Tariff Countries</option>
+                    <option value="regional">Regional Tariff Analysis</option>
+                    <option value="sector">Tariffs by Sector</option>
+                </select>
+                <button id="download-chart" class="action-button">
+                    <i class="fas fa-download"></i> Export Chart
+                </button>
+            </div>
+            <div id="chart-container"></div>
+            <div id="chart-insights" class="insights-panel">
+                <h3>Key Insights</h3>
+                <p>Select a chart type above to see analysis.</p>
+            </div>
+        </div>
         
         <footer>
             <p>Data source: Trump tariff tracker | Last updated: April 2025 | <a href="privacy-policy.html">Privacy Policy</a></p>
