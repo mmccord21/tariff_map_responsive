@@ -475,17 +475,25 @@ function createMap(tariffData, worldData, isMobile) {
             return '#d0d0d0'; // Default color for countries without tariff data
         })
         .on('mouseover', function(event, d) {
-            if (!isMobile) { // Only show tooltip on mouseover for non-mobile
+            if (!isMobile) { // Only show tooltip on hover for desktop
+                const countryName = d.properties.name;
+                if (countryName && tariffData[countryName]) {
+                    d3.select(this).style('stroke-width', '1.5px').style('stroke', '#000');
+                    showTooltip(event, countryName, tariffData[countryName], countryTariffPercentages[countryName]);
+                }
+            }
+        })
+        .on('mousemove', function(event, d) {
+            if (!isMobile) { // Update tooltip position on mouse move for desktop
                 const countryName = d.properties.name;
                 if (countryName && tariffData[countryName]) {
                     showTooltip(event, countryName, tariffData[countryName], countryTariffPercentages[countryName]);
-                } else {
-                    hideTooltip();
                 }
             }
         })
         .on('mouseout', function() {
-            if (!isMobile) { // Only hide on mouseout for non-mobile
+            if (!isMobile) { // Only hide on mouseout for desktop
+                d3.select(this).style('stroke-width', '0.5px').style('stroke', '#fff');
                 hideTooltip();
             }
         })
@@ -598,6 +606,7 @@ function createMap(tariffData, worldData, isMobile) {
     // Tooltip functions
     function showTooltip(event, countryName, tariffs, avgTariff) {
         const tooltip = document.getElementById('tooltip');
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
         
         // Create tooltip content
         tooltip.innerHTML = `
@@ -620,7 +629,7 @@ function createMap(tariffData, worldData, isMobile) {
         
         // Position logic changes for mobile vs desktop
         if (isMobile) {
-            // Fixed position bottom sheet style on mobile
+            // Mobile styling (bottom sheet)
             tooltip.classList.add('mobile-tooltip');
             tooltip.style.position = 'fixed';
             tooltip.style.left = '0';
@@ -658,32 +667,39 @@ function createMap(tariffData, worldData, isMobile) {
                 });
             }
         } else {
-            // Regular tooltip on desktop
+            // Desktop styling (hovering tooltip)
             tooltip.classList.remove('mobile-tooltip');
-            const tooltipRect = tooltip.getBoundingClientRect();
-            const mapRect = document.getElementById('map-container').getBoundingClientRect();
+            tooltip.style.position = 'absolute';
+            tooltip.style.pointerEvents = 'none';
+            tooltip.style.maxHeight = '300px';
+            tooltip.style.overflowY = 'auto';
+            tooltip.style.maxWidth = '300px';
+            tooltip.style.width = 'auto';
+            tooltip.style.zIndex = '1000';
             
+            // Get cursor position and position tooltip near cursor
             const cursorX = event.clientX || (event.touches && event.touches[0].clientX);
             const cursorY = event.clientY || (event.touches && event.touches[0].clientY);
+            const mapRect = document.getElementById('map-container').getBoundingClientRect();
             
-            let top = cursorY - 200;
-            let left = cursorX - 200;
+            // Position tooltip 10px to the right and 10px below cursor by default
+            let left = cursorX + 10 - mapRect.left;
+            let top = cursorY + 10 - mapRect.top;
+            
+            const tooltipRect = tooltip.getBoundingClientRect();
             
             // Check for right overflow
-            if ((cursorX + tooltipRect.width + 20) > window.innerWidth) {
-                left = cursorX - tooltipRect.width - 15;
+            if (cursorX + tooltipRect.width + 20 > window.innerWidth) {
+                left = cursorX - tooltipRect.width - 20 - mapRect.left;
             }
             
             // Check for bottom overflow
-            if ((cursorY + tooltipRect.height + 20) > window.innerHeight) {
-                top = cursorY - tooltipRect.height - 15;
+            if (cursorY + tooltipRect.height + 20 > window.innerHeight) {
+                top = cursorY - tooltipRect.height - 20 - mapRect.top;
             }
             
-            // Set position
             tooltip.style.left = `${left}px`;
             tooltip.style.top = `${top}px`;
-            tooltip.style.maxWidth = '300px';
-            tooltip.style.width = 'auto';
         }
     }
     
