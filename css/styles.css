@@ -444,6 +444,7 @@ header p {
     padding: 20px 0;
 }
 
+/* Analytics filter controls */
 .filters-row {
     display: flex;
     justify-content: space-between;
@@ -622,6 +623,92 @@ header p {
     
     .stat-value {
         font-size: 1.2rem;
+    }
+    
+    .filters-row {
+        flex-direction: column;
+    }
+    
+    .filter-options {
+        flex-direction: column;
+    }
+    
+    .analytics-select, 
+    #download-chart {
+        width: 100%;
+    }
+    
+    .stat-box {
+        padding: 10px;
+        min-width: 100px;
+    }
+    
+    .stat-title {
+        font-size: 0.8rem;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    
+    .country-active {
+        stroke: #000;
+        stroke-width: 2px;
+        opacity: 0.8;
+    }
+    
+    /* Make tooltip more visible on mobile */
+    .mobile-tooltip {
+        background-color: #fff;
+        padding: 16px;
+        animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-controls {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    
+    .global-search {
+        width: 100%;
+    }
+    
+    .global-search input {
+        width: 100%;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    
+    .timeline-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .date-range-selector {
+        flex-wrap: wrap;
+    }
+    
+    #chart-container {
+        height: 300px;
     }
 }
 
