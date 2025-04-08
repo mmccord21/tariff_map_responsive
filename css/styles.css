@@ -295,6 +295,28 @@ footer {
     body {
         font-size: 16px;
     }
+    
+    .country-active {
+        stroke: #000;
+        stroke-width: 2px;
+        opacity: 0.8;
+    }
+    
+    /* Make tooltip more visible on mobile */
+    .mobile-tooltip {
+        background-color: #fff;
+        padding: 16px;
+        animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 }
 
 @media (max-width: 576px) {

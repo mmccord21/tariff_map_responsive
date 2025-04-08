@@ -125,29 +125,25 @@ function createDataTable(tariffData) {
     }
 
     function renderMobileCards(data) {
-        tableBody.innerHTML = '';
+        // Clear the table container completely first
+        const tableContainer = document.getElementById('table-container');
+        tableContainer.innerHTML = '';
         
         if (data.length === 0) {
             const noDataDiv = document.createElement('div');
             noDataDiv.className = 'no-data';
             noDataDiv.textContent = 'No matching tariff data found';
-            tableBody.appendChild(noDataDiv);
+            tableContainer.appendChild(noDataDiv);
             return;
         }
         
-        // Remove table and replace with card container
-        const tableContainer = document.getElementById('table-container');
-        const existingTable = document.getElementById('tariff-table');
-        
-        if (existingTable) {
-            tableContainer.removeChild(existingTable);
-        }
-        
+        // Create a fresh card container
         const cardContainer = document.createElement('div');
         cardContainer.id = 'card-container';
         cardContainer.className = 'mobile-card-container';
         tableContainer.appendChild(cardContainer);
         
+        // Add cards for each item
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'tariff-card';
@@ -169,6 +165,41 @@ function createDataTable(tariffData) {
     }
 
     function renderDesktopTable(data) {
+        // First make sure the table exists
+        const tableContainer = document.getElementById('table-container');
+        let table = document.getElementById('tariff-table');
+        
+        // If we switched from mobile to desktop, we need to recreate the table
+        if (!table) {
+            tableContainer.innerHTML = '';
+            table = document.createElement('table');
+            table.id = 'tariff-table';
+            table.className = 'data-table';
+            
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>Country</th>
+                    <th>Target</th>
+                    <th>Tariff Rate</th>
+                    <th>Date Announced</th>
+                    <th>Date in Effect</th>
+                    <th>Legal Authority</th>
+                    <th>Source</th>
+                </tr>
+            `;
+            
+            table.appendChild(thead);
+            
+            const tbody = document.createElement('tbody');
+            tbody.id = 'tariff-table-body';
+            table.appendChild(tbody);
+            
+            tableContainer.appendChild(table);
+        }
+        
+        // Now fill the table body
+        const tableBody = document.getElementById('tariff-table-body');
         tableBody.innerHTML = '';
         
         if (data.length === 0) {
@@ -458,20 +489,33 @@ function createMap(tariffData, worldData, isMobile) {
                 hideTooltip();
             }
         })
-        .on('touchstart', function(event, d) {
-            event.preventDefault(); // Prevent default touch behavior
+        .on('click touchend', function(event, d) {
+            // This handles both mouse clicks and touch events
+            event.preventDefault();
             const countryName = d.properties.name;
             
-            // For touch devices, toggle tooltip visibility
-            const tooltip = document.getElementById('tooltip');
-            const isVisible = tooltip.style.display === 'block';
-            
-            // Hide any visible tooltips first
-            hideTooltip();
-            
-            // If the tooltip wasn't visible for this country, show it
-            if (!isVisible && countryName && tariffData[countryName]) {
-                showTooltip(event, countryName, tariffData[countryName], countryTariffPercentages[countryName]);
+            // Clear any previously active country
+            svg.selectAll('.country').classed('country-active', false);
+
+            // Mark this country as active
+            if (isMobile) {
+                d3.select(this).classed('country-active', true);
+            }
+
+            if (countryName && tariffData[countryName]) {
+                // For mobile, toggle tooltip visibility
+                const tooltip = document.getElementById('tooltip');
+                const isVisible = tooltip.style.display === 'block';
+                
+                // First hide any visible tooltips
+                hideTooltip();
+                
+                // If the tooltip wasn't visible for this country, show it
+                if (!isVisible || tooltip.dataset.country !== countryName) {
+                    showTooltip(event, countryName, tariffData[countryName], countryTariffPercentages[countryName]);
+                    // Store which country this tooltip is for
+                    tooltip.dataset.country = countryName;
+                }
             }
         });
 
@@ -571,10 +615,6 @@ function createMap(tariffData, worldData, isMobile) {
             ${isMobile ? '<button class="close-tooltip">Close</button>' : ''}
         `;
         
-        if (isMobile) {
-            document.querySelector('.close-tooltip').addEventListener('click', hideTooltip);
-        }
-        
         // Show the tooltip
         tooltip.style.display = 'block';
         
@@ -609,8 +649,16 @@ function createMap(tariffData, worldData, isMobile) {
             document.body.appendChild(overlay);
             
             overlay.addEventListener('click', hideTooltip);
+            
+            // Add click event to close button
+            if (document.querySelector('.close-tooltip')) {
+                document.querySelector('.close-tooltip').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    hideTooltip();
+                });
+            }
         } else {
-            // Regular tooltip on desktop (your existing code)
+            // Regular tooltip on desktop
             tooltip.classList.remove('mobile-tooltip');
             const tooltipRect = tooltip.getBoundingClientRect();
             const mapRect = document.getElementById('map-container').getBoundingClientRect();
