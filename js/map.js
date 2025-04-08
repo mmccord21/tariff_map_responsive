@@ -746,3 +746,184 @@ function createMap(tariffData, worldData, isMobile) {
             });
     }
 }
+
+// Load additional scripts
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+}
+
+// Load all additional components
+document.addEventListener('DOMContentLoaded', function() {
+    Promise.all([
+        loadScript('js/charts.js'),
+        loadScript('js/timeline.js'),
+        loadScript('js/theme.js')
+    ]).catch(error => {
+        console.error('Error loading additional components:', error);
+    });
+    
+    // Initialize global search
+    setupGlobalSearch();
+});
+
+function setupGlobalSearch() {
+    const searchInput = document.getElementById('global-search');
+    const searchButton = document.getElementById('search-button');
+    const resultsDropdown = document.getElementById('search-results');
+    
+    // Show search results as user types
+    searchInput.addEventListener('input', debounce(function() {
+        const query = searchInput.value.trim().toLowerCase();
+        
+        if (query.length < 2) {
+            resultsDropdown.classList.add('hidden');
+            return;
+        }
+        
+        fetch('data/tariff_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const results = searchTariffData(data, query);
+                displaySearchResults(results);
+            });
+    }, 300));
+    
+    // Handle search button click
+    searchButton.addEventListener('click', function() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query.length >= 2) {
+            fetch('data/tariff_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const results = searchTariffData(data, query);
+                    displaySearchResults(results);
+                });
+        }
+    });
+    
+    // Helper function for search
+    function searchTariffData(data, query) {
+        const results = [];
+        
+        Object.entries(data).forEach(([country, tariffs]) => {
+            if (country.toLowerCase().includes(query)) {
+                results.push({
+                    type: 'country',
+                    name: country,
+                    count: tariffs.length,
+                    avgTariff: calculateAvgTariff(tariffs)
+                });
+            }
+            
+            tariffs.forEach(tariff => {
+                if (tariff.target && tariff.target.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'tariff',
+                        country: country,
+                        target: tariff.target,
+                        rate: tariff.rate
+                    });
+                }
+            });
+        });
+        
+        return results.slice(0, 10); // Limit to top 10 results
+    }
+    
+    function calculateAvgTariff(tariffs) {
+        const rates = tariffs
+            .map(t => typeof t.rate === 'number' ? t.rate : 0)
+            .filter(rate => rate > 0);
+        
+        if (rates.length === 0) return 0;
+        return rates.reduce((sum, rate) => sum + rate, 0) / rates.length * 100;
+    }
+    
+    // Display search results
+    function displaySearchResults(results) {
+        resultsDropdown.innerHTML = '';
+        
+        if (results.length === 0) {
+            resultsDropdown.innerHTML = '<div class="search-no-results">No results found</div>';
+            resultsDropdown.classList.remove('hidden');
+            return;
+        }
+        
+        results.forEach(result => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            
+            if (result.type === 'country') {
+                resultItem.innerHTML = `
+                    <div class="result-country">
+                        <strong>${result.name}</strong>
+                        <div class="result-meta">
+                            <span>${result.count} tariffs</span>
+                            <span>Avg: ${result.avgTariff.toFixed(1)}%</span>
+                        </div>
+                    </div>
+                `;
+                
+                resultItem.addEventListener('click', () => {
+                    // Switch to map view and focus on country
+                    document.querySelector('[data-tab="map-view"]').click();
+                    setTimeout(() => highlightCountry(result.name), 300);
+                    resultsDropdown.classList.add('hidden');
+                });
+            } else {
+                resultItem.innerHTML = `
+                    <div class="result-tariff">
+                        <div>${result.target}</div>
+                        <div class="result-meta">
+                            <span>${result.country}</span>
+                            <span>Rate: ${typeof result.rate === 'number' ? (result.rate * 100).toFixed(1) + '%' : result.rate}</span>
+                        </div>
+                    </div>
+                `;
+                
+                resultItem.addEventListener('click', () => {
+                    // Switch to map view and focus on country
+                    document.querySelector('[data-tab="map-view"]').click();
+                    setTimeout(() => highlightCountry(result.country), 300);
+                    resultsDropdown.classList.add('hidden');
+                });
+            }
+            
+            resultsDropdown.appendChild(resultItem);
+        });
+        
+        resultsDropdown.classList.remove('hidden');
+    }
+    
+    // Function to highlight a country on the map
+    function highlightCountry(countryName) {
+        const countryElements = document.querySelectorAll('.country');
+        countryElements.forEach(el => {
+            if (el.__data__ && el.__data__.properties.name === countryName) {
+                el.dispatchEvent(new Event('click'));
+            }
+        });
+    }
+    
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.global-search') && !event.target.closest('.search-dropdown')) {
+            resultsDropdown.classList.add('hidden');
+        }
+    });
+    
+    // Debounce helper function
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+}

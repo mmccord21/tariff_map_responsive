@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351903024035248"
             crossorigin="anonymous"></script>
+    <!-- Add these to the head section, after existing scripts -->
+    <meta name="theme-color" content="#2c3e50">
+    <meta property="og:title" content="USA Tariff Map - Interactive Visualization">
+    <meta property="og:description" content="Interactive visualization of tariff rates imposed by the United States on countries around the world.">
+    <meta property="og:image" content="https://usatariffmap.com/img/og-preview.jpg">
+    <meta property="og:url" content="https://usatariffmap.com/">
+    <meta property="og:type" content="website">
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -37,18 +44,39 @@
 <body>
     <div class="container">
         <header>
-            <h1>USA Tariffs Map</h1>
-            <p>Interactive visualization of tariff rates imposed by the United States</p>
+            <div class="header-main">
+                <div class="logo">
+                    <h1>USA Tariffs Map</h1>
+                    <p class="tagline">Interactive visualization of tariff rates</p>
+                </div>
+                <div class="header-controls">
+                    <div class="global-search">
+                        <input type="text" id="global-search" placeholder="Search countries or tariffs...">
+                        <button id="search-button"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-button" id="share-button">
+                            <i class="fas fa-share-alt"></i> Share
+                        </button>
+                        <button class="action-button theme-toggle" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="search-results" class="search-dropdown hidden"></div>
         </header>
         
         <div class="tabs">
             <div class="tab active" data-tab="map-view">Map View</div>
             <div class="tab" data-tab="table-view">Table View</div>
+            <div class="tab" data-tab="timeline-view">Timeline</div>
+            <div class="tab" data-tab="charts-view">Analytics</div>
         </div>
         
         <div id="map-view" class="tab-content active">
             <!-- Ad placement before map -->
-            <!--<div class="ad-container">
+            <div class="ad-container">
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-3351903024035248"
@@ -58,7 +86,7 @@
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-            </div>-->
+            </div>
             
             <div id="map-container">
                 <div id="map"></div>
@@ -109,6 +137,40 @@
                         <!-- Table rows will be populated by JavaScript -->
                     </tbody>
                 </table>
+            </div>
+        </div>
+        
+        <div id="timeline-view" class="tab-content">
+            <div class="timeline-controls">
+                <div class="date-range-selector">
+                    <label for="start-date">From:</label>
+                    <input type="date" id="start-date" value="2025-01-01">
+                    <label for="end-date">To:</label>
+                    <input type="date" id="end-date" value="2025-12-31">
+                </div>
+                <button id="play-timeline" class="action-button">
+                    <i class="fas fa-play"></i> Play Timeline
+                </button>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-scale">
+                    <div class="timeline-markers"></div>
+                </div>
+                <div class="timeline-events"></div>
+            </div>
+            <div class="timeline-legend">
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #e74c3c;"></span>
+                    <span class="legend-label">Tariff Increase</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #3498db;"></span>
+                    <span class="legend-label">Tariff Announcement</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #2ecc71;"></span>
+                    <span class="legend-label">Tariff Reduction</span>
+                </div>
             </div>
         </div>
         
