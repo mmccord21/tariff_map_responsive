@@ -670,13 +670,13 @@ function createMap(tariffData, worldData, isMobile) {
             // Desktop styling (hovering tooltip)
             tooltip.classList.remove('mobile-tooltip');
             tooltip.style.position = 'absolute';
-            tooltip.style.pointerEvents = 'none';
-            // Remove max-height constraint to show all content
-            tooltip.style.maxHeight = 'none'; 
-            tooltip.style.overflowY = 'visible';
-            tooltip.style.maxWidth = '300px';
+            tooltip.style.pointerEvents = 'auto'; // Changed to allow scrolling
+            tooltip.style.maxHeight = '600px'; // Set a reasonable max height
+            tooltip.style.overflowY = 'auto'; // Changed back to auto to allow scrolling
+            tooltip.style.maxWidth = '320px'; 
             tooltip.style.width = 'auto';
             tooltip.style.zIndex = '1000';
+            tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
             
             // First position tooltip near cursor
             const cursorX = event.clientX || (event.touches && event.touches[0].clientX);
@@ -687,24 +687,18 @@ function createMap(tariffData, worldData, isMobile) {
             tooltip.style.left = '0px';
             tooltip.style.top = '0px';
             
-            // Get tooltip dimensions
-            const tooltipRect = tooltip.getBoundingClientRect();
-            const tooltipHeight = tooltipRect.height;
-            const tooltipWidth = tooltipRect.width;
-            
             // Calculate optimal position
-            let left = cursorX + 10;
-            let top = cursorY + 10;
+            let left = cursorX + 15;
+            let top = cursorY + 15;
             
             // Check for right overflow
-            if (left + tooltipWidth > window.innerWidth) {
-                left = cursorX - tooltipWidth - 10;
+            if (left + 320 > window.innerWidth) { // Use max-width for calculation
+                left = Math.max(10, cursorX - 330);  // Ensure it doesn't go off-screen to the left
             }
             
-            // Check for bottom overflow
-            if (top + tooltipHeight > window.innerHeight) {
-                // If too tall for the screen, position at top of screen with small margin
-                top = Math.max(10, cursorY - tooltipHeight - 10);
+            // Check for bottom overflow with max-height
+            if (top + 400 > window.innerHeight) {
+                top = Math.max(10, window.innerHeight - 410);
             }
             
             // Convert to relative position within map container

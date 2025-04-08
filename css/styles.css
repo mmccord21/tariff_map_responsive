@@ -444,21 +444,40 @@ footer {
 /* Desktop-specific tooltip styles */
 @media (min-width: 769px) {
     #tooltip {
-        /* Remove max-height limit */
-        max-height: none;
-        overflow-y: visible;
-        pointer-events: none;
-        background-color: white;
+        max-height: 400px;
+        overflow-y: auto;
+        pointer-events: auto; /* Allow scrolling */
+        background-color: rgba(255, 255, 255, 0.95);
         border: 1px solid #ddd;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        padding: 12px;
+        padding: 15px;
         font-size: 0.9rem;
         line-height: 1.4;
         border-radius: 4px;
         z-index: 1000;
+        scrollbar-width: thin; /* Firefox */
     }
     
-    /* Keep other styles the same */
+    /* Custom scrollbar for webkit browsers */
+    #tooltip::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    #tooltip::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    #tooltip::-webkit-scrollbar-thumb {
+        background: #bbb;
+        border-radius: 3px;
+    }
+    
+    #tooltip::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
+    
+    /* Other tooltip styles remain the same */
     #tooltip h3 {
         font-size: 1rem;
         margin-bottom: 8px;
