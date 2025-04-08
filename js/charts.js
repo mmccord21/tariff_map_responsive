@@ -290,54 +290,140 @@ function createRegionalChart(data) {
 }
 
 function createSectorChart(data) {
-    // Implementation for sector chart (simplified)
+    // Implementation for sector chart with improved data extraction
     const ctx = getChartContext();
     
-    // Extract sectors (in a full implementation, you would categorize targets into sectors)
-    const sectorData = [
-        { sector: "Automobiles", avgTariff: 25.0 },
-        { sector: "Steel & Aluminum", avgTariff: 25.0 },
-        { sector: "Electronics", avgTariff: 15.5 },
-        { sector: "Agricultural Products", avgTariff: 12.2 },
-        { sector: "Textiles", avgTariff: 18.7 }
+    // Extract and categorize tariffs into sectors
+    const sectors = {};
+    Object.entries(data).forEach(([country, tariffs]) => {
+        tariffs.forEach(tariff => {
+            if (!tariff.target) return;
+            
+            // Categorize tariffs into sectors based on keywords
+            let sector = 'Other';
+            
+            if (/auto|car|vehicle/i.test(tariff.target)) {
+                sector = "Automotive";
+            } else if (/steel|aluminum|metal|iron/i.test(tariff.target)) {
+                sector = "Metals & Mining";
+            } else if (/electronic|tech|computer|semiconductor|chip/i.test(tariff.target)) {
+                sector = "Electronics & Technology";
+            } else if (/food|agriculture|crop|grain|fruit|vegetable|meat/i.test(tariff.target)) {
+                sector = "Agricultural Products";
+            } else if (/textile|clothing|apparel|garment|fabric/i.test(tariff.target)) {
+                sector = "Textiles & Apparel";
+            } else if (/energy|oil|gas|petroleum|coal/i.test(tariff.target)) {
+                sector = "Energy";
+            } else if (/chemical|pharmaceutical|drug|medicine/i.test(tariff.target)) {
+                sector = "Chemicals & Pharmaceuticals";
+            }
+            
+            if (!sectors[sector]) {
+                sectors[sector] = {
+                    rates: [],
+                    count: 0
+                };
+            }
+            
+            if (typeof tariff.rate === 'number') {
+                sectors[sector].rates.push(tariff.rate * 100);
+            }
+            sectors[sector].count++;
+        });
+    });
+    
+    // Calculate average rates and prepare data for chart
+    const sectorData = Object.entries(sectors).map(([name, data]) => {
+        const avgRate = data.rates.length > 0 
+            ? data.rates.reduce((sum, rate) => sum + rate, 0) / data.rates.length
+            : 0;
+        
+        return {
+            sector: name,
+            avgTariff: avgRate,
+            count: data.count
+        };
+    }).filter(item => item.count >= 2); // Only include sectors with at least 2 tariffs
+    
+    // Sort by average tariff rate
+    sectorData.sort((a, b) => b.avgTariff - a.avgTariff);
+    
+    // Create professional color palette
+    const colors = [
+        '#2b6cb0', '#3182ce', '#4299e1', '#63b3ed', '#90cdf4',
+        '#bee3f8', '#ebf8ff', '#2c5282', '#2a4365', '#1a365d'
     ];
     
+    // Create horizontal bar chart
     new Chart(ctx, {
-        type: 'horizontalBar',
+        type: 'bar',
         data: {
             labels: sectorData.map(item => item.sector),
             datasets: [{
                 label: 'Average Tariff Rate (%)',
                 data: sectorData.map(item => item.avgTariff),
-                backgroundColor: generateGradientColors(sectorData.length)
+                backgroundColor: sectorData.map((_, i) => colors[i % colors.length]),
+                borderColor: '#e2e8f0',
+                borderWidth: 1
             }]
         },
         options: {
-            indexAxis: 'y',
+            indexAxis: 'y', // Horizontal bars
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
                 title: {
                     display: true,
                     text: 'Average Tariff Rates by Industry Sector',
-                    font: { size: 16 }
+                    font: { size: 16, weight: 'bold' }
                 },
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const item = sectorData[context.dataIndex];
+                            return [
+                                `Average Tariff: ${item.avgTariff.toFixed(1)}%`,
+                                `Number of Tariffs: ${item.count}`
+                            ];
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Average Tariff Rate (%)'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Industry Sector'
+                    }
                 }
             }
         }
     });
     
-    // Update insights for sector view
+    // Update insights for sector view with more professional analysis
     document.getElementById('chart-insights').innerHTML = `
         <h3>Sector Analysis</h3>
-        <p>This chart shows the average tariff rates across different industry sectors.</p>
+        <p>This chart shows the average tariff rates across different industry sectors based on categorization of target products.</p>
         <ul>
-            <li><strong>Highest tariff sector:</strong> Automobiles and Steel/Aluminum (25%)</li>
-            <li><strong>Lowest tariff sector:</strong> Agricultural Products (12.2%)</li>
-            <li>The tariff rate for electronics (15.5%) is significantly lower than industrial goods</li>
+            <li><strong>Highest tariff sector:</strong> ${sectorData[0].sector} (${sectorData[0].avgTariff.toFixed(1)}%)</li>
+            <li><strong>Lowest tariff sector:</strong> ${sectorData[sectorData.length-1].sector} (${sectorData[sectorData.length-1].avgTariff.toFixed(1)}%)</li>
+            <li><strong>Average across sectors:</strong> ${(sectorData.reduce((sum, item) => sum + item.avgTariff, 0) / sectorData.length).toFixed(1)}%</li>
         </ul>
-        <p class="insight-note">Note: Sector classifications are based on target product categories.</p>
+        <p class="insight-note">Note: Sectors are determined by analyzing product descriptions in the tariff data. Only sectors with multiple tariffs are displayed.</p>
     `;
 }
