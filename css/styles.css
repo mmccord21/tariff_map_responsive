@@ -444,8 +444,9 @@ footer {
 /* Desktop-specific tooltip styles */
 @media (min-width: 769px) {
     #tooltip {
-        max-height: 300px;
-        overflow-y: auto;
+        /* Remove max-height limit */
+        max-height: none;
+        overflow-y: visible;
         pointer-events: none;
         background-color: white;
         border: 1px solid #ddd;
@@ -457,6 +458,7 @@ footer {
         z-index: 1000;
     }
     
+    /* Keep other styles the same */
     #tooltip h3 {
         font-size: 1rem;
         margin-bottom: 8px;

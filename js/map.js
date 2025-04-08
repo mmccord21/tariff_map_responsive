@@ -671,33 +671,47 @@ function createMap(tariffData, worldData, isMobile) {
             tooltip.classList.remove('mobile-tooltip');
             tooltip.style.position = 'absolute';
             tooltip.style.pointerEvents = 'none';
-            tooltip.style.maxHeight = '300px';
-            tooltip.style.overflowY = 'auto';
+            // Remove max-height constraint to show all content
+            tooltip.style.maxHeight = 'none'; 
+            tooltip.style.overflowY = 'visible';
             tooltip.style.maxWidth = '300px';
             tooltip.style.width = 'auto';
             tooltip.style.zIndex = '1000';
             
-            // Get cursor position and position tooltip near cursor
+            // First position tooltip near cursor
             const cursorX = event.clientX || (event.touches && event.touches[0].clientX);
             const cursorY = event.clientY || (event.touches && event.touches[0].clientY);
             const mapRect = document.getElementById('map-container').getBoundingClientRect();
             
-            // Position tooltip 10px to the right and 10px below cursor by default
-            let left = cursorX + 10 - mapRect.left;
-            let top = cursorY + 10 - mapRect.top;
+            // Make tooltip visible but positioned off-screen temporarily so we can measure it
+            tooltip.style.left = '0px';
+            tooltip.style.top = '0px';
             
+            // Get tooltip dimensions
             const tooltipRect = tooltip.getBoundingClientRect();
+            const tooltipHeight = tooltipRect.height;
+            const tooltipWidth = tooltipRect.width;
+            
+            // Calculate optimal position
+            let left = cursorX + 10;
+            let top = cursorY + 10;
             
             // Check for right overflow
-            if (cursorX + tooltipRect.width + 20 > window.innerWidth) {
-                left = cursorX - tooltipRect.width - 20 - mapRect.left;
+            if (left + tooltipWidth > window.innerWidth) {
+                left = cursorX - tooltipWidth - 10;
             }
             
             // Check for bottom overflow
-            if (cursorY + tooltipRect.height + 20 > window.innerHeight) {
-                top = cursorY - tooltipRect.height - 20 - mapRect.top;
+            if (top + tooltipHeight > window.innerHeight) {
+                // If too tall for the screen, position at top of screen with small margin
+                top = Math.max(10, cursorY - tooltipHeight - 10);
             }
             
+            // Convert to relative position within map container
+            left = left - mapRect.left;
+            top = top - mapRect.top;
+            
+            // Apply final position
             tooltip.style.left = `${left}px`;
             tooltip.style.top = `${top}px`;
         }
