@@ -516,7 +516,6 @@ function updateInsightsPanel(data) {
             <li><strong>${highest.country}</strong> has the highest average tariff at <strong>${highest.avgTariff.toFixed(2)}%</strong></li>
             <li><strong>${lowest.country}</strong> has the lowest average tariff in this group at <strong>${lowest.avgTariff.toFixed(2)}%</strong></li>
             <li>The average tariff across these countries is <strong>${average.toFixed(2)}%</strong></li>
-            <li>Regional analysis shows [INSERT ANALYSIS BASED ON REGIONS]</li>
         </ul>
         <p class="insight-note">Note: Averages are calculated based on available tariff data.</p>
     `;
