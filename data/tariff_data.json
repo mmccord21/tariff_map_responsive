@@ -1,883 +1,1017 @@
 {
+  "Afghanistan": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
   "Algeria": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
       "rate": 0.3,
-      "sources": "USTR Press Release"
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Angola": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.32,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
-  "Argentina": [
+  "Austria": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0,
-      "sources": "USTR Press Release"
-    }
-  ],
-  "Australia": [
-    {
-      "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
+      "target": "Digital services taxes (DSTs)",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
       "rate": "TBD",
-      "sources": "USTR Press Release"
+      "sources": "Defending American Corporations and Innovators from Overseas Extortion Memo"
     }
   ],
   "Bangladesh": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.37,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.2,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Bolivia": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Bosnia and Herzegovina": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.36,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.3,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Botswana": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.38,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Brazil": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": "TBD",
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products (with exceptions)",
+      "date_announced": "2025-07-30",
+      "date_in_effect": "2025-08-06",
+      "legal_authority": "Executive Order, Section 301",
+      "rate": 0.4,
+      "sources": "Executive Order (July 30, 2025)"
     }
   ],
   "Brunei": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.24,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Cambodia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.49,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Cameroon": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.12,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Canada": [
     {
       "target_type": "Economy",
-      "target": "USMCA noncompliant goods",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.25,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "USMCA noncompliant energy products",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.1,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "USMCA noncompliant potash",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.1,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "Exempt",
-      "legal_authority": "IEEPA",
+      "target": "Goods entered duty free under USMCA",
+      "date_announced": "2025-03-06",
+      "date_in_effect": "2025-03-07",
+      "legal_authority": "Executive Order",
       "rate": 0,
-      "sources": "USTR Press Release"
+      "sources": "Exec. Order 14231"
     },
     {
       "target_type": "Economy",
-      "target": "Digital service taxes",
-      "date_announced": "2025-02-21",
-      "date_in_effect": "TBD",
-      "legal_authority": "Section 301",
-      "rate": "TBD",
-      "sources": "White House Fact Sheet"
+      "target": "Energy or energy resources",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order 14193"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Potash not duty free under USMCA",
+      "date_announced": "2025-03-06",
+      "date_in_effect": "2025-03-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order 14231"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All other products (fentanyl tariff)",
+      "date_announced": "2025-02-03",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "Executive Order",
+      "rate": 0.35,
+      "sources": "Exec. Order 14197"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Transshipped goods",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-01",
+      "legal_authority": "Executive Order",
+      "rate": 0.4,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Dairy products and lumber",
+      "date_announced": "2025-03-07",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 2.5,
+      "sources": "Exec. Order (Mar. 7, 2025)"
     }
   ],
   "Chad": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.13,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "China": [
     {
       "target_type": "Economy",
-      "target": "All imports",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-03",
-      "legal_authority": "IEEPA",
-      "rate": 0.2,
-      "sources": "Presidential Action "
+      "target": "All products (Reciprocal Tariff)",
+      "date_announced": "2025-05-12",
+      "date_in_effect": "2025-08-12",
+      "legal_authority": "Executive Order",
+      "rate": 0.34,
+      "sources": "Exec. Order 14298"
     },
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.34,
-      "sources": "USTR Press Release"
-    }
-  ],
-  "C\u00f4te d`Ivoire": [
+      "target": "All products",
+      "date_announced": "2025-02-01",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "Executive Order",
+      "rate": 0.2,
+      "sources": "Exec. Order 14195, Exec. Order 14228"
+    },
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.21,
-      "sources": "USTR Press Release"
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14256"
     }
   ],
-  "Democratic Republic of the Congo": [
+  "Colombia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.11,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-01-26",
+      "date_in_effect": "Rescinded",
+      "legal_authority": "N/A",
+      "rate": 0.25,
+      "sources": "Government Announcement"
+    }
+  ],
+  "Costa Rica": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Côte d’Ivoire": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Democratic Republic of Congo": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Dominican Republic": [
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
     }
   ],
   "Equatorial Guinea": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.13,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "European Union": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.2,
-      "sources": "USTR Press Release"
+      "target": "All products with Column 1 Duty Rate > 15%",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0,
+      "sources": "Exec. Order (July 31, 2025)"
     },
     {
       "target_type": "Economy",
-      "target": "Digital services taxes",
-      "date_announced": "2025-02-21",
+      "target": "All products with Column 1 Duty Rate < 15%",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": "0.15 minus Column 1 Duty Rate",
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-05-23",
+      "date_in_effect": "2025-07-09",
+      "legal_authority": "Executive Order",
+      "rate": 0.5,
+      "sources": "Government Announcement"
+    },
+    {
+      "target_type": "Sector",
+      "target": "Alcohol products",
+      "date_announced": "2025-03-13",
       "date_in_effect": "TBD",
-      "legal_authority": "Section 301",
-      "rate": "TBD",
-      "sources": "Presidential Action "
+      "legal_authority": "Executive Order",
+      "rate": 2,
+      "sources": "Government Announcement"
     }
   ],
   "Falkland Islands": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.42,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Fiji": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.32,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
-  "Global": [
+  "France": [
     {
-      "target_type": "Other",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-04-02",
-      "date_in_effect": "2025-04-05",
-      "legal_authority": "IEEPA",
-      "rate": 0.1,
-      "sources": "USTR Press Release"
-    },
-    {
-      "target_type": "Sector",
-      "target": "Steel and aluminum",
-      "date_announced": "2025-02-10",
-      "date_in_effect": "2025-03-12",
-      "legal_authority": "Section 232",
-      "rate": 0.25,
-      "sources": "Federal Register"
-    },
-    {
-      "target_type": "Sector",
-      "target": "Copper",
-      "date_announced": "2025-02-25",
-      "date_in_effect": "Under investigation",
-      "legal_authority": "Section 232",
+      "target_type": "Economy",
+      "target": "Digital services taxes (DSTs)",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
       "rate": "TBD",
-      "sources": "Presidential Action"
-    },
+      "sources": "Defending American Corporations and Innovators from Overseas Extortion Memo"
+    }
+  ],
+  "Ghana": [
     {
-      "target_type": "Sector",
-      "target": "Timber and lumber",
-      "date_announced": "2025-03-01",
-      "date_in_effect": "Under investigation",
-      "legal_authority": "Section 232",
-      "rate": "TBD",
-      "sources": "Presidential Action"
-    },
-    {
-      "target_type": "Sector",
-      "target": "Automobiles",
-      "date_announced": "2025-03-26",
-      "date_in_effect": "2025-04-03",
-      "legal_authority": "Section 232, 301, 604",
-      "rate": 0.25,
-      "sources": "Presidential Action"
-    },
-    {
-      "target_type": "Sector",
-      "target": "Automobile parts",
-      "date_announced": "2025-03-26",
-      "date_in_effect": "TBD,  No later than 5/3/2025",
-      "legal_authority": "Section 232, 301, 604",
-      "rate": 0.25,
-      "sources": "Presidential Action"
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Guyana": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.38,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Iceland": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "India": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.27,
-      "sources": "USTR Press Release"
+      "target": "All products (Reciprocal)",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
     }
   ],
   "Indonesia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.32,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Iraq": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.39,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.35,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Israel": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.17,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Japan": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.24,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Jordan": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.2,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Kazakhstan": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.27,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Laos": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.48,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.4,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Lesotho": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.5,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Libya": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.31,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.3,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Liechtenstein": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.37,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Madagascar": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.47,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Malawi": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.18,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Malaysia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.24,
-      "sources": "USTR Press Release"
+      "target": "All products (Reciprocal)",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
     }
   ],
   "Mauritius": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.4,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Mexico": [
     {
       "target_type": "Economy",
-      "target": "Non-USMCA commodities",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.25,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "Non-USMCA energy products",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.1,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "Non-USMCA potash",
-      "date_announced": "2025-02-01",
-      "date_in_effect": "2025-03-04",
-      "legal_authority": "IEEPA",
-      "rate": 0.1,
-      "sources": "White House Fact Sheet"
-    },
-    {
-      "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "Exempt",
-      "legal_authority": "IEEPA",
+      "target": "Goods entered duty free under USMCA",
+      "date_announced": "2025-03-06",
+      "date_in_effect": "2025-03-07",
+      "legal_authority": "Executive Order",
       "rate": 0,
-      "sources": "USTR Press Release"
+      "sources": "Exec. Order 14232"
     },
     {
       "target_type": "Economy",
-      "target": "Digital service taxes",
-      "date_announced": "2025-02-21",
-      "date_in_effect": "TBD",
-      "legal_authority": "Section 301",
-      "rate": "TBD",
-      "sources": "White House Fact Sheet"
+      "target": "Potash not duty free under USMCA",
+      "date_announced": "2025-03-06",
+      "date_in_effect": "2025-03-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order 14232"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All other products (fentanyl tariff)",
+      "date_announced": "2025-02-03",
+      "date_in_effect": "2025-03-04",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14198"
     }
   ],
   "Moldova": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.31,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Mozambique": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.16,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Myanmar (Burma)": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.45,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.4,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Namibia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.21,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Nauru": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.3,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Nicaragua": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.19,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.18,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Nigeria": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.14,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "North Macedonia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.33,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Norway": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.16,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Pakistan": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.3,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Philippines": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.18,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Russia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0,
-      "sources": "USTR Press Release"
-    }
-  ],
-  "Saudi Arabia": [
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
+    },
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-01-22",
+      "date_in_effect": "TBD",
+      "legal_authority": "Executive Order",
+      "rate": "TBD",
+      "sources": "Government Announcement"
     }
   ],
   "Serbia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.38,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.35,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "South Africa": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.31,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.3,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "South Korea": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.26,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Singapore": [
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
+    }
+  ],
+  "Spain": [
+    {
+      "target_type": "Economy",
+      "target": "Digital services taxes (DSTs)",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
+      "rate": "TBD",
+      "sources": "Defending American Corporations and Innovators from Overseas Extortion Memo"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
     }
   ],
   "Sri Lanka": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.44,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.2,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Switzerland": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.32,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.39,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Syria": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
       "rate": 0.41,
-      "sources": "USTR Press Release"
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Taiwan": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.32,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.2,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Thailand": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.37,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.19,
+      "sources": "Exec. Order (July 31, 2025)"
+    }
+  ],
+  "Trinidad and Tobago": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Tunisia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.28,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Turkey": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "Digital services taxes (DSTs)",
+      "date_announced": "2025-02-21",
+      "date_in_effect": "TBD",
+      "legal_authority": "Section 301",
       "rate": "TBD",
-      "sources": "USTR Press Release"
+      "sources": "Defending American Corporations and Innovators from Overseas Extortion Memo"
+    }
+  ],
+  "Uganda": [
+    {
+      "target_type": "Economy",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "United Kingdom": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": "TBD",
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.1,
+      "sources": "Exec. Order (July 31, 2025)"
     },
     {
       "target_type": "Economy",
-      "target": "Digital services taxes",
+      "target": "Digital services taxes (DSTs)",
       "date_announced": "2025-02-21",
       "date_in_effect": "TBD",
       "legal_authority": "Section 301",
       "rate": "TBD",
-      "sources": "USTR Press Release"
+      "sources": "Defending American Corporations and Innovators from Overseas Extortion Memo"
     }
   ],
   "Vanuatu": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.23,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Venezuela": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
       "rate": 0.15,
-      "sources": "USTR Press Release"
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Vietnam": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.46,
-      "sources": "USTR Press Release"
+      "target": "All products (Reciprocal)",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.2,
+      "sources": "Exec. Order (July 31, 2025)"
+    },
+    {
+      "target_type": "Economy",
+      "target": "All products (Venezuelan oil purchaser)",
+      "date_announced": "2025-03-24",
+      "date_in_effect": "2025-04-02",
+      "legal_authority": "Executive Order",
+      "rate": 0.25,
+      "sources": "Exec. Order 14245"
     }
   ],
   "Zambia": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.17,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ],
   "Zimbabwe": [
     {
       "target_type": "Economy",
-      "target": "Non-reciprocal trade",
-      "date_announced": "2025-02-13",
-      "date_in_effect": "2025-04-09",
-      "legal_authority": "IEEPA",
-      "rate": 0.18,
-      "sources": "USTR Press Release"
+      "target": "All products",
+      "date_announced": "2025-07-31",
+      "date_in_effect": "2025-08-07",
+      "legal_authority": "Executive Order",
+      "rate": 0.15,
+      "sources": "Exec. Order (July 31, 2025)"
     }
   ]
-}
