@@ -1,0 +1,15 @@
+1. Create the Environment
+It's assumed you have a Conda distribution (like Miniconda or Anaconda) installed and have already cloned the project repository.
+
+Navigate to the project's root directory in your anaconda terminal.
+Create the environment from the provided YAML file. This command sets up an isolated environment with all the necessary dependencies defined in environment.yml.
+conda env create --file environment.yml
+
+2. Run the Script
+Activate the newly created environment. Your shell prompt will update to reflect the active environment.
+conda activate tariff_map_responsive
+
+Execute the Python script.
+python data/data_manipulation.py
+
+The script will now process the data, and any specified output files will be generated in the data/ directory.
